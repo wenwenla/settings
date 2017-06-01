@@ -40,3 +40,25 @@ let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1 
 let g:miniBufExplMapCTabSwitchBufs = 1 
 let g:miniBufExplModSelTarget = 1 
+
+nnoremap <F10> :call Compile()<CR>
+
+function Compile()
+    exec "w"
+    if &filetype == "cpp"
+        exec "!clear && echo Compiling... && g++ -std=c++11 -Wall %"
+        if v:shell_error == 0
+            exec "!./a.out"
+        endif
+    elseif &filetype == "python"
+        exec "!clear && python3 %"
+    elseif &filetype == "java"
+        exec "!clear && echo Compiling... && javac %"
+        if v:shell_error == 0
+            exec "!java %<"
+        endif
+    else
+        echo &filetype
+        echo "Not considered!"
+    endif
+endfunction
