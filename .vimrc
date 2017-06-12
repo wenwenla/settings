@@ -36,10 +36,16 @@ let g:Powerline_symbols = 'fancy'
 let g:Powerline_colorscheme = 'solarized256'
 let g:Powerline_theme = 'solarized256'
 
+let g:miniBufExplVSplit = 20 
+let g:miniBufExplBRSplit = 0 
 let g:miniBufExplMapWindowNavVim = 1 
 let g:miniBufExplMapWindowNavArrows = 1 
 let g:miniBufExplMapCTabSwitchBufs = 1 
 let g:miniBufExplModSelTarget = 1 
+
+nnoremap <silent> <M-1> :MBEToggle<CR>
+exec "set <M-1>=\e1"
+set ttimeout ttimeoutlen=100
 
 nnoremap <F10> :call Compile()<CR>
 
