@@ -4,6 +4,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'Lokaltog/vim-powerline'
 Plugin 'https://github.com/tpope/vim-commentary.git'
 Plugin 'https://github.com/terryma/vim-smooth-scroll.git'
@@ -21,7 +22,6 @@ set expandtab
 set smarttab
 set nu
 set background=dark
-set termguicolors
 set t_Co=256
 set laststatus=2
 
@@ -68,3 +68,7 @@ function Compile()
         echo "Not considered!"
     endif
 endfunction
+
+set completeopt=longest,menu
+let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:ycm_seed_identifiers_with_syntax = 1
