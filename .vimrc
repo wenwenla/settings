@@ -47,7 +47,7 @@ nnoremap <silent> <M-1> :MBEToggle<CR>
 exec "set <M-1>=\e1"
 set ttimeout ttimeoutlen=100
 
-nnoremap <F10> :call Compile()<CR>
+nnoremap <F9> :call Compile()<CR>
 
 function Compile()
     exec "w"
