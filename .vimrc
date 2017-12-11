@@ -69,7 +69,7 @@ let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 let NERDTreeAutoDeleteBuffer=1
 
-nmap <Leader>bs :MBEToggle<CR>
+nmap <Leader>bl :MBEToggle<CR>
 let g:miniBufExplVSplit = 20 
 let g:miniBufExplBRSplit = 0 
 let g:miniBufExplMapWindowNavVim = 1 
