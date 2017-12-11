@@ -11,6 +11,7 @@ Plugin 'https://github.com/terryma/vim-smooth-scroll.git'
 Plugin 'https://github.com/tomasr/molokai.git'
 Plugin 'https://github.com/fholgado/minibufexpl.vim.git'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'scrooloose/nerdtree'
 call vundle#end()
 filetype plugin indent on
 
@@ -36,19 +37,7 @@ let g:Powerline_symbols = 'fancy'
 let g:Powerline_colorscheme = 'solarized256'
 let g:Powerline_theme = 'solarized256'
 
-let g:miniBufExplVSplit = 20 
-let g:miniBufExplBRSplit = 0 
-let g:miniBufExplMapWindowNavVim = 1 
-let g:miniBufExplMapWindowNavArrows = 1 
-let g:miniBufExplMapCTabSwitchBufs = 1 
-let g:miniBufExplModSelTarget = 1 
-
-nnoremap <silent> <M-1> :MBEToggle<CR>
-exec "set <M-1>=\e1"
-set ttimeout ttimeoutlen=100
-
 nnoremap <F9> :call Compile()<CR>
-
 function Compile()
     exec "w"
     if &filetype == "cpp"
@@ -70,5 +59,21 @@ function Compile()
 endfunction
 
 set completeopt=longest,menu
-let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
+let g:ycm_extra_conf_globlist = ['~/.ycm_extra_conf.py', '~/cppcode/*']
 let g:ycm_seed_identifiers_with_syntax = 1
+
+nmap <Leader>fl :NERDTreeToggle<CR>
+let NERDTreeWinSize=20
+let NERDTreeWinPos="right"
+let NERDTreeShowHidden=1
+let NERDTreeMinimalUI=1
+let NERDTreeAutoDeleteBuffer=1
+
+nmap <Leader>bs :MBEToggle<CR>
+let g:miniBufExplVSplit = 20 
+let g:miniBufExplBRSplit = 0 
+let g:miniBufExplMapWindowNavVim = 1 
+let g:miniBufExplMapWindowNavArrows = 1 
+let g:miniBufExplMapCTabSwitchBufs = 1 
+let g:miniBufExplModSelTarget = 1 
+
