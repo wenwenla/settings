@@ -14,6 +14,7 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'scrooloose/nerdtree'
 call vundle#end()
 filetype plugin indent on
+syntax on
 
 set autoindent
 set ts=4
